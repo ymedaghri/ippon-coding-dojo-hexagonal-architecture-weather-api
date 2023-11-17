@@ -1,0 +1,35 @@
+{
+  "name": "smart-fridge-inside-out",
+  "version": "1.0.0",
+  "description": "Kata FridgeCraft InsideOut",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:pyramid": "vitest run && ts-node test-pyramid.ts && open test-pyramid.html"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "."
+    ],
+    "ext": "ts",
+    "ignore": [
+      "**/*.spec.ts"
+    ],
+    "exec": "ts-node index.ts"
+  },
+  "author": "Youssef Medaghri-Alaoui",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.1",
+    "@vitest/coverage-v8": "^0.34.6",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules
+coverage
+./test-pyramid.html
+./test-pyramid-report.json

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <title>Your project Name - Suivi de qualité</title>
+    <script type="text/javascript">
+      window.onload = function () {        
+        var tests = [           
+          {
+            type: 'fonc',
+            total: 1,
+            precedence : 1,
+            value: coeff => ({
+                    y: coeff * 1,
+                    color: "#999966",
+                    label: "Tests fonctionnels",
+                    indexLabel: " Fonctionnel : 1 tests (25.00%) en 2 secondes",
+		                toolTipContent: "{label}: 25.00%",
+                    exploded: true
+                  })
+          },
+          {
+            type: 'integ',
+            total: 1,
+            precedence : 2,
+            value: coeff => ({
+                    y: coeff * 1,
+                    color: "#ff6600",
+                    label: "Tests d'intégration",
+                    indexLabel: " Intégration : 1 tests (25.00%) en 2 secondes",
+		                toolTipContent: "{label}: 25.00%",
+                    exploded: true
+                  })
+          },          
+          {
+            type: 'unit',
+            total: 2,
+            precedence : 3,
+            value: coeff => ({
+                    y: coeff * 2,
+                    color: "#009900",
+                    label: "Tests unitaires",
+                    indexLabel: " Unitaire : 2 tests (50.00%) en 2 secondes",
+		                toolTipContent: "{label}: 50.00%",
+                    exploded: true
+                  })           
+          }       
+        ]
+        
+        var iceCreamCone = 1 > 2 || 1 > 2
+
+        tests.sort((a,b)=>{
+          if(b.total==a.total){
+            if(iceCreamCone){
+              return a.precedence-b.precedence
+            }
+            return b.precedence-a.precedence
+          }
+          return b.total-a.total
+          })
+              
+        var level1 = tests[0].value(5)
+        var level2 = tests[1].value(3)
+        var level3  = tests[2].value(1)              
+        
+        
+        var chart = new CanvasJS.Chart("chartContainer",
+          {
+            title: {
+              text: "Pyramide des tests"
+            },
+            animationEnabled: true,
+            data: [
+              {
+                type: "pyramid",
+                valueRepresents: "area",
+                reversed: iceCreamCone,
+                dataPoints: [
+                  level1,
+                  level2,
+                  level3                                    
+                ]
+              }
+            ]
+          });
+        chart.render();
+      }
+    </script>
+  </head>
+  <body>
+    <main role="main">
+      <section class="text-center">
+        <div class="container fw-bold">
+          <h1>Your Team</h1>
+          <h2>Your project Name</h2>
+        </div>
+      </section>
+
+      <div class="container" style="margin-top:100px; margin-bottom:100px;">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header font-weight-bold">Cartographie des tests</div>
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="bg-dark text-white">
+                      <th scope="col">Typologie</th>
+                      <th scope="col" class="text-end">Nombre tests</th>
+                      <th scope="col" class="text-end">Durée (ms)</th>
+                      <th scope="col" class="text-end">Pourcentage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-white" style="background-color: #999966">
+                      <td>
+                        <div>
+                          <u><a class="text-white alert-link" href="./cucumber/index.html">Fonctionnel</a></u>
+                        </div>
+                        <!-- <div style="margin-left: 1rem">Cucumber</div>
+                        <div style="margin-left: 1rem">JUnit</div>
+                        <div style="margin-left: 1rem">JUnit Paramétrés</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div>1</div>
+                       <!--  <div style="margin-left: 1rem">@TOTAL_CUCU@</div>
+                        <div style="margin-left: 1rem">@TOTAL_FOJU@</div>
+                        <div style="margin-left: 1rem">@TOTAL_FOJUPA@</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div><span>2</span></div>
+                      </td>
+                      <td class="text-end">
+                        <div><span>25.00 %</span></div>
+                        <!-- <div style="margin-left: 1rem">@TOTAL_CUCU_PERCENT@ %</div>
+                        <div style="margin-left: 1rem">@TOTAL_FOJU_PERCENT@ %</div>
+                        <div style="margin-left: 1rem">@TOTAL_FOJUPA_PERCENT@ %</div> -->
+                      </td>
+                    </tr>
+                    <tr class="text-white" style="background-color: #ff6600">
+                      <td>
+                        <div>
+                          <u><a class="text-white alert-link" href="./cucumber/index.html">Intégration</a></u>
+                        </div>
+                        <!-- <div style="margin-left: 1rem">JUnit</div>
+                        <div style="margin-left: 1rem">JUnit Paramétrés</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div>1</div>
+                        <!-- <div style="margin-left: 1rem">@TOTAL_INTEGJU@</div>
+                        <div style="margin-left: 1rem">@TOTAL_INTEGJUPA@</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div><span>2</span></div>
+                      </td>
+                      <td class="text-end">
+                        <div><span>25.00 %</span></div>
+                        <!-- <div style="margin-left: 1rem">@TOTAL_INTEGJU_PERCENT@ %</div>
+                        <div style="margin-left: 1rem">@TOTAL_INTEGJUPA_PERCENT@ %</div> -->
+                      </td>
+                    </tr>
+                    <tr class="text-white" style="background-color: #009900">
+                      <td>
+                        <div>
+                          <u><a class="text-white alert-link" href="./cucumber/index.html">Unitaire</a></u>
+                        </div>
+                        <!-- <div style="margin-left: 1rem">JUnit</div>
+                        <div style="margin-left: 1rem">JUnit Paramétrés</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div>2</div>
+                        <!-- <div style="margin-left: 1rem">@TOTAL_UNITJU@</div>
+                        <div style="margin-left: 1rem">@TOTAL_UNITJUPA@</div> -->
+                      </td>
+                      <td class="text-end">
+                        <div><span>2</span></div>
+                      </td>
+                      <td class="text-end">
+                        <div><span>50.00 %</span></div>
+                        <!-- <div style="margin-left: 1rem">@TOTAL_UNITJU_PERCENT@ %</div>
+                        <div style="margin-left: 1rem">@TOTAL_UNITJUPA_PERCENT@ %</div> -->
+                      </td>
+                    </tr>
+                    <tr class="font-italic">
+                      <td>A catégoriser</td>
+                      <td class="text-end">0</td>
+                      <td class="text-end">0</td>
+                      <td class="text-end">0.00 %</td>
+                    </tr>
+                    <tr class="bg-dark text-white text-end">
+                      <td>Total</td>
+                      <td>4</td>
+                      <td>6 <p class="fw-lighter">(instru. : 0.0)</p></td>
+                      <td>100.00 %</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div id="chartContainer"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="my-4 pt-4 text-muted text-center text-small">
+      <p class="mb-1">Made with ❤️ by Your Team</p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>
