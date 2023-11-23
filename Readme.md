@@ -1,7 +1,7 @@
-# Typescript Vitest Bootstrap Project
+# Coding Dojo Hexagonal Architecture Weather API
 
 ## Description
-This project, "typescript-vitest-bootstrap", is mostly used for making Test-Driven Development (TDD) katas. It uses TypeScript for strong typing and enhanced development experience, and Vitest for running tests, including coverage.
+See https://github.com/swkBerlin/ports-and-adapters
 
 ## Installation
 

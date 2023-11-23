@@ -1,14 +1,14 @@
 {
-  "numTotalTestSuites": 6,
-  "numPassedTestSuites": 6,
+  "numTotalTestSuites": 2,
+  "numPassedTestSuites": 2,
   "numFailedTestSuites": 0,
   "numPendingTestSuites": 0,
-  "numTotalTests": 4,
-  "numPassedTests": 4,
+  "numTotalTests": 1,
+  "numPassedTests": 1,
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1700485527579,
+  "startTime": 1700751039582,
   "success": true,
   "testResults": [
     {
@@ -16,71 +16,20 @@
         {
           "ancestorTitles": [
             "",
-            "Test Suite 1"
+            "WeatherServiceAdapter"
           ],
-          "fullName": " Test Suite 1 Test 1",
+          "fullName": " WeatherServiceAdapter Doit appeler l'api meteo Islandaise et retourner le résultat",
           "status": "passed",
-          "title": "Test 1",
-          "duration": 2,
+          "title": "Doit appeler l'api meteo Islandaise et retourner le résultat",
+          "duration": 7,
           "failureMessages": []
         }
       ],
-      "startTime": 1700486310403,
-      "endTime": 1700486310405,
+      "startTime": 1700751701096,
+      "endTime": 1700751701103,
       "status": "passed",
       "message": "",
-      "name": "/Users/ippon/Documents/2023-2024/Repositories/Ippon/IppEvents/live-coding/smart-fridge/inside-out/index.fonc.test.ts"
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": [
-            "",
-            "Test Suite 1"
-          ],
-          "fullName": " Test Suite 1 Test 1",
-          "status": "passed",
-          "title": "Test 1",
-          "duration": 2,
-          "failureMessages": []
-        }
-      ],
-      "startTime": 1700486310403,
-      "endTime": 1700486310405,
-      "status": "passed",
-      "message": "",
-      "name": "/Users/ippon/Documents/2023-2024/Repositories/Ippon/IppEvents/live-coding/smart-fridge/inside-out/index.integ.test.ts"
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": [
-            "",
-            "Test Suite 1"
-          ],
-          "fullName": " Test Suite 1 Test 1",
-          "status": "passed",
-          "title": "Test 1",
-          "duration": 2,
-          "failureMessages": []
-        },
-        {
-          "ancestorTitles": [
-            "",
-            "Test Suite 1"
-          ],
-          "fullName": " Test Suite 1 Test 2",
-          "status": "passed",
-          "title": "Test 2",
-          "duration": 0,
-          "failureMessages": []
-        }
-      ],
-      "startTime": 1700486310403,
-      "endTime": 1700486310405,
-      "status": "passed",
-      "message": "",
-      "name": "/Users/ippon/Documents/2023-2024/Repositories/Ippon/IppEvents/live-coding/smart-fridge/inside-out/index.unit.test.ts"
+      "name": "/Users/ymedaghrialaoui/Documents/2023-2024/Repositories/Ippon/IppEvents/coding-dojos/2023_11_23_Archi_Hexa/type-archi-hexa/src/weatherServiceAdapter.unit.test.ts"
     }
   ]
 }
