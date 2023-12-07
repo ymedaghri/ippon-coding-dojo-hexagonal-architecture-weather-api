@@ -8,7 +8,7 @@
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1700751039582,
+  "startTime": 1701954047822,
   "success": true,
   "testResults": [
     {
@@ -21,15 +21,15 @@
           "fullName": " WeatherServiceAdapter Doit appeler l'api meteo Islandaise et retourner le résultat",
           "status": "passed",
           "title": "Doit appeler l'api meteo Islandaise et retourner le résultat",
-          "duration": 7,
+          "duration": 26,
           "failureMessages": []
         }
       ],
-      "startTime": 1700751701096,
-      "endTime": 1700751701103,
+      "startTime": 1701954112002,
+      "endTime": 1701954112028,
       "status": "passed",
       "message": "",
-      "name": "/Users/ymedaghrialaoui/Documents/2023-2024/Repositories/Ippon/IppEvents/coding-dojos/2023_11_23_Archi_Hexa/type-archi-hexa/src/weatherServiceAdapter.unit.test.ts"
+      "name": "/Users/nerrahoui/Documents/workspace/ippon/ippon-coding-dojo-hexagonal-architecture-weather-api/src/weatherServiceAdapter.unit.test.ts"
     }
   ]
 }

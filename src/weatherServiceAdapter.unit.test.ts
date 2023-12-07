@@ -2,18 +2,7 @@ import { afterAll, afterEach, beforeAll, describe, test, expect } from 'vitest'
 import { setupServer } from 'msw/node'
 import { HttpResponse, http } from 'msw'
 import weatherServiceAdapter from './weatherServiceAdapter'
-
-const forecasts = (station: string) => [
-  {
-    name: 'Reykjavík',
-    atime: '2023-11-23 06:00:00',
-    err: '',
-    link: `http://en.vedur.is/weather/forecasts/areas/reykjavik/#group=100&station=${station}`,
-    forecast: [{ ftime: '2023-11-23 07:00:00', F: '3' }],
-    id: station,
-    valid: '1',
-  },
-]
+import { forecasts } from './weather.fixture'
 
 export const restHandlers = [
   http.get('https://apis.is/weather/forecasts/en', ({ request }) => {

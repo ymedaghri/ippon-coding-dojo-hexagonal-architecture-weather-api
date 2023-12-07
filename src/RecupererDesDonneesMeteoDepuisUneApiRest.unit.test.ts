@@ -1,10 +1,10 @@
 import { describe, expect, test, vi } from 'vitest'
-import { applicationBuilder } from './application'
+import { InputPort, applicationBuilder } from './application'
 
 describe('Recuperer des donnees meteo depuis une API', () => {
   test('Appel GET sur https://apis.is/weather/forecasts/en?stations=1', () => {
     // Given
-    const wheaterServiceAdapter = {
+    const wheaterServiceAdapter: InputPort = {
       getForecastForStation: vi.fn(() => {
         return [
           {
